@@ -74,3 +74,24 @@ header {
     color: $blackColor;
   }
 }
+
+.what-i-do {
+  display: grid;
+  grid-template-columns: 50vw 1fr;
+  grid-gap: 10px;
+  align-items: center;
+  justify-content: space-around;
+  padding: 50px 100px;
+  h2 {
+    font-size: 15vw;
+    opacity: 0.5;
+    text-align: center;
+    line-height: 10vw;
+    text-transform: uppercase;
+  }
+  ul {
+    li {
+      font-size: 24px;
+    }
+  }
+}
