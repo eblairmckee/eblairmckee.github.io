@@ -2,13 +2,13 @@
 
 @charset "UTF-8";
 
-@import "menu";
-
 /* Constants */
-$primary: yellow;
+$accent: yellow;
 $text-color: #666;
 $font-size: 18px;
 $blackColor: #020304;
+
+@import "menu";
 
 /* Google Fonts */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
@@ -37,4 +37,40 @@ html {
 
 p {
   font-size: $font-size;
+}
+
+.overlay {
+  background-image: url("../assets/3d-cubes.png");
+  background-size: contain;
+  background-position: top left;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+header {
+  max-height: 50vw;
+  min-height: 500px;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 10vw;
+    padding-top: 100px;
+  }
+  h1 {
+    font-size: 7vw;
+    background: $accent;
+    display: inline;
+    text-align: left;
+    color: $blackColor;
+  }
+  .subheading {
+    text-align: left;
+    font-size: 2vw;
+    background: $accent;
+    display: inline;
+    color: $blackColor;
+  }
 }
