@@ -3,7 +3,7 @@
 @charset "UTF-8";
 
 /* Constants */
-$accent: yellow;
+$accent: #fdde41;
 $text-color: #666;
 $font-size: 18px;
 $blackColor: #020304;
@@ -14,219 +14,290 @@ $blackColor: #020304;
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
 
 html {
-  height: 100%;
-  box-sizing: border-box;
-  body {
-    min-height: 100%;
     height: 100%;
-    position: relative;
-    font-family: "Open Sans", sans-serif;
-    font-size: $font-size;
-    color: $text-color;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
+    box-sizing: border-box;
+
+    body {
+        min-height: 100%;
+        height: 100%;
+        position: relative;
+        font-family: "Open Sans", sans-serif;
+        font-size: $font-size;
+        color: $text-color;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+    }
 }
 
 * {
-  &:before,
-  &:after {
-    box-sizing: inherit;
-  }
+
+    &:before,
+    &:after {
+        box-sizing: inherit;
+    }
 }
 
 p {
-  font-size: $font-size;
+    font-size: $font-size;
 }
 
 .triangles-overlay {
-  background-image: url("../assets/3d-cubes.png");
-  background-size: contain;
-  background-position: top left;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  width: 100vw;
+    background-image: url("../assets/3d-cubes.png");
+    background-size: contain;
+    background-position: top left;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100vw;
 }
 
 header {
-  max-height: 50vw;
-  min-height: 500px;
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-left: 10vw;
-    padding-top: 100px;
-  }
-  h1 {
-    font-size: 7vw;
-    background: $accent;
-    display: inline;
-    text-align: left;
-    color: $blackColor;
-    @media (max-width: 900px) {
-      font-size: 42px;
+    max-height: 50vw;
+    min-height: 500px;
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 10vw;
+        padding-top: 100px;
     }
-  }
-  .subheading {
-    text-align: left;
-    font-size: 2vw;
-    background: $accent;
-    display: inline;
-    color: $blackColor;
-    @media (max-width: 900px) {
-      font-size: 18px;
+
+    h1 {
+        font-size: 7vw;
+        background: $accent;
+        display: inline;
+        text-align: left;
+        color: $blackColor;
+
+        @media (max-width: 900px) {
+            font-size: 42px;
+        }
     }
-  }
+
+    .subheading {
+        text-align: left;
+        font-size: 2vw;
+        background: $accent;
+        display: inline;
+        color: $blackColor;
+
+        @media (max-width: 900px) {
+            font-size: 18px;
+        }
+    }
 }
 
 .what-i-do-section {
-  display: grid;
-  grid-template-columns: 50vw 1fr;
-  grid-gap: 10px;
-  align-items: center;
-  justify-content: space-around;
-  padding: 50px 100px;
-  @media (max-width: 1000px) {
-    grid-template-columns: 1fr;
-    padding: 25px 10px;
-  }
-  h2 {
-    font-size: 15vw;
-    opacity: 0.3;
-    text-align: center;
-    line-height: 10vw;
-    text-transform: uppercase;
-  }
-  ul {
-    list-style: none;
-    li {
-      font-size: 24px;
-      font-weight: 600;
-      text-align: right;
-      margin-bottom: 20px;
-    }
-  }
-  p {
-    margin-top: 50px;
-    text-align: right;
+    display: grid;
+    grid-template-columns: 50vw 1fr;
+    grid-gap: 10px;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px 100px;
+
     @media (max-width: 1000px) {
-      text-align: center;
+        grid-template-columns: 1fr;
+        padding: 25px 10px;
     }
-  }
-  a {
-    color: $blackColor;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    rotate: 90deg;
-    font-size: 2em;
-    text-align: right;
-    transition: all 0.3s;
-    background: linear-gradient(to right, $accent 50%, white 50%);
-    background-size: 200% 100%;
-    background-position: right bottom;
-    @media (max-width: 1000px) {
-      text-align: center;
+
+    h2 {
+        font-size: 15vw;
+        opacity: 0.3;
+        text-align: center;
+        line-height: 10vw;
+        text-transform: uppercase;
     }
-    &:hover {
-      background-position: left bottom;
+
+    ul {
+        list-style: none;
+
+        li {
+            font-size: 24px;
+            font-weight: 600;
+            text-align: right;
+            margin-bottom: 20px;
+        }
     }
-  }
+
+    p {
+        margin-top: 50px;
+        text-align: right;
+
+        @media (max-width: 1000px) {
+            text-align: center;
+        }
+    }
+
+    a {
+        color: $blackColor;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        rotate: 90deg;
+        font-size: 2em;
+        text-align: right;
+        transition: all 0.3s;
+        background: linear-gradient(to right, $accent 50%, white 50%);
+        background-size: 200% 100%;
+        background-position: right bottom;
+
+        @media (max-width: 1000px) {
+            text-align: center;
+        }
+
+        &:hover {
+            background-position: left bottom;
+        }
+    }
 }
 
 .contact-section {
-  padding: 0px 100px 50px 100px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  @media (max-width: 750px) {
-    padding: 0px 10px 50px 10px;
-  }
-  .circle {
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    background: $accent;
+    padding: 0px 100px 50px 100px;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+
     @media (max-width: 750px) {
-      width: 300px;
-      height: 300px;
+        padding: 0px 10px 50px 10px;
     }
-  }
-  h2 > a {
-    color: $blackColor;
-    text-decoration: none;
-    transition: all 0.3s;
-    background: linear-gradient(to right, $accent 50%, white 50%);
-    background-size: 200% 100%;
-    background-position: right bottom;
-    font-size: 80px;
-    @media (max-width: 750px) {
-      font-size: 32px;
+
+    .circle {
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        background: $accent;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        @media (max-width: 750px) {
+            width: 300px;
+            height: 300px;
+        }
     }
-    &:hover {
-      background-position: left bottom;
+
+    h2>a {
+        color: $blackColor;
+        text-decoration: none;
+        transition: all 0.3s;
+        background: linear-gradient(to right, $accent 50%, white 50%);
+        background-size: 200% 100%;
+        background-position: right bottom;
+        font-size: 80px;
+
+        @media (max-width: 750px) {
+            font-size: 32px;
+        }
+
+        &:hover {
+            background-position: left bottom;
+        }
     }
-  }
 }
 
 .portfolio-grid-section {
-  padding: 0px 10px;
-  display: block;
-  .wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  h2 {
-    font-size: 5vw;
-    background: $accent;
-    display: inline;
-    text-align: center;
-    color: $blackColor;
-    @media (max-width: 900px) {
-      font-size: 42px;
+    padding: 0px 10px;
+    display: block;
+
+    .wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
     }
-  }
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(48vw, 1fr));
-    grid-auto-rows: 500px;
-    grid-auto-flow: dense;
-    width: 100vw;
-    align-items: flex-start;
-    grid-gap: 5% 1%;
-    @media (max-width: 1000px) {
-      grid-template-columns: 100vw;
-      grid-gap: 50px;
+
+    .categories {
+        padding: 20px 0px;
+
+        .category {
+            cursor: pointer;
+            color: $blackColor;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 18px;
+            rotate: 90deg;
+            font-size: 2em;
+            text-align: right;
+            transition: all 0.3s;
+            background: linear-gradient(to right, $accent 50%, white 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
+
+            @media (max-width: 1000px) {
+                text-align: center;
+            }
+
+            &:hover {
+                background-position: left bottom;
+            }
+        }
     }
-  }
-  .item {
-    overflow: hidden;
-    display: grid;
-    width: 100%;
-    height: 100%;
-  }
-  .item > a > img {
-    grid-column: 1 / -1;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-  .website {
-    grid-row: span 3;
-  }
-  .email {
-    grid-row: span 2;
-  }
+
+    h2 {
+        font-size: 5vw;
+        background: $accent;
+        display: inline;
+        text-align: center;
+        color: $blackColor;
+
+        @media (max-width: 900px) {
+            font-size: 42px;
+        }
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(12, 350px);
+        grid-gap: 10px 10px;
+        grid-auto-flow: dense;
+    }
+
+    .item {
+        width: 100%;
+        overflow-y: hidden;
+        transition: ease 0.3s;
+
+        img {
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: ease 0.3s;
+
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .item--tall {
+        grid-row: span 2;
+        overflow-y: hidden;
+    }
+
+    .item--wide {
+        grid-column: span 2;
+        max-height: 700px;
+    }
 }
 
 .writing-samples-section {
-  @extend .what-i-do-section;
-  margin-top: -500px;
+    @extend .what-i-do-section;
+    margin-top: -500px;
+}
+
+/* Lazy Load */
+.b-lazy {
+    -webkit-transition: opacity 500ms ease-in-out;
+    -moz-transition: opacity 500ms ease-in-out;
+    -o-transition: opacity 500ms ease-in-out;
+    transition: opacity 500ms ease-in-out;
+    max-width: 100%;
+    opacity: 0;
+}
+
+.b-lazy.b-loaded {
+    opacity: 1;
 }
