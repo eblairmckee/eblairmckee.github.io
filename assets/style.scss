@@ -197,6 +197,7 @@ header {
     padding: 0px 10px;
     display: block;
     margin-top: -100px;
+    min-height: 1000px;
 
     .wrapper {
         display: flex;
@@ -253,7 +254,7 @@ header {
     }
 
     .item {
-        width: 100%;
+        max-width: 100%;
         grid-column-end: span 1;
         grid-row-end: span 3;
         overflow-y: hidden;
@@ -264,6 +265,7 @@ header {
             margin-bottom: 20px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             transition: ease 0.3s;
+            max-width: 100%;
 
             &:hover {
                 opacity: 0.5;
