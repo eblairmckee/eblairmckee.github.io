@@ -198,11 +198,17 @@ header {
     display: block;
     margin-top: -100px;
     min-height: 1000px;
+    @media(max-width: 1200px){
+        margin-top: 0;
+    }
 
     .wrapper {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        @media(max-width: 850px){
+            flex-direction: column;
+        }
     }
 
     .categories {
@@ -255,10 +261,15 @@ header {
 
     .item {
         max-width: 100%;
+        min-width: 400px;
         grid-column-end: span 1;
         grid-row-end: span 3;
         overflow-y: hidden;
         transition: ease 0.3s;
+        @media(max-width: 850px){
+            min-width: 300px;
+            grid-column: 1 / -1;
+        }
 
         img {
             border-radius: 10px;
