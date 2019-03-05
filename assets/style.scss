@@ -2,13 +2,9 @@
 
 @charset "UTF-8";
 
-/* Constants */
-$accent: #fdde41;
-$text-color: #666;
-$font-size: 18px;
-$blackColor: #020304;
-
-@import "menu";
+@import 'variables';
+@import 'menu';
+@import 'lazy';
 
 /* Google Fonts */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
@@ -200,6 +196,7 @@ header {
 .portfolio-grid-section {
     padding: 0px 10px;
     display: block;
+    margin-top: -100px;
 
     .wrapper {
         display: flex;
@@ -249,14 +246,16 @@ header {
 
     .gallery {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: repeat(12, 350px);
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        grid-auto-rows: 100px;
         grid-gap: 10px 10px;
         grid-auto-flow: dense;
     }
 
     .item {
         width: 100%;
+        grid-column-end: span 1;
+        grid-row-end: span 3;
         overflow-y: hidden;
         transition: ease 0.3s;
 
@@ -273,12 +272,17 @@ header {
     }
 
     .item--tall {
-        grid-row: span 2;
+        grid-row-end: span 6;
+        overflow-y: hidden;
+    }
+
+    .item--medium {
+        grid-row-end: span 4;
         overflow-y: hidden;
     }
 
     .item--wide {
-        grid-column: span 2;
+        grid-column-end: span 2;
         max-height: 700px;
     }
 }
@@ -286,18 +290,6 @@ header {
 .writing-samples-section {
     @extend .what-i-do-section;
     margin-top: -500px;
-}
+    padding: 0px 50px;
 
-/* Lazy Load */
-.b-lazy {
-    -webkit-transition: opacity 500ms ease-in-out;
-    -moz-transition: opacity 500ms ease-in-out;
-    -o-transition: opacity 500ms ease-in-out;
-    transition: opacity 500ms ease-in-out;
-    max-width: 100%;
-    opacity: 0;
-}
-
-.b-lazy.b-loaded {
-    opacity: 1;
 }

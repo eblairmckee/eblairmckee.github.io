@@ -15,13 +15,13 @@ input + label {
     display: block;
     background: $text-color;
     transition: 0.5s;
-  }
-  span:first-child {
-    top: 3px;
-  }
-  span:last-child {
-    top: 36px;
-  }
+    &:first-child {
+        top: 3px;
+        }
+    &:last-child {
+        top: 36px;
+        }
+    }
 }
 label:hover {
   cursor: pointer;
@@ -30,14 +30,14 @@ input:checked + label {
   span {
     opacity: 0;
     top: 50%;
-  }
-  span:first-child {
-    opacity: 1;
-    transform: rotate(405deg);
-  }
-  span:last-child {
-    opacity: 1;
-    transform: rotate(-405deg);
+    &:first-child {
+        opacity: 1;
+        transform: rotate(405deg);
+    };
+    &:last-child {
+        opacity: 1;
+        transform: rotate(-405deg);
+    }
   }
 }
 input ~ nav {
